@@ -1,53 +1,60 @@
 import React from 'react'
 import {useState} from 'react';
-import {BrowserRouter as Router, Routes, Route , Link, Navigate} from 'react-router-dom'
 import axios from "axios";
+import {  useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './CSS/Add.css'
 
 function Add() {
     const [values, setValues] = useState({
         name:'',
         task: '',
         deadline: '',
-        code:''
       });
-    
-    
+
      
-      const { name, task, deadline, code} = values;
+    const { name, task, deadline} = values;
     
     
-      const inputHandler = (e) => {
+    const inputHandler = (e) => {
         let val = e.target.value;
         setValues({...values, [e.target.name] : val})
         console.log(values)
     }
     
+    let navigate = useNavigate();
+
     
     const onSubmit = (e) =>{
       e.preventDefault();
-      let text = "Are you sure?"
-      if(window.confirm(text)=== true) {
+      if(values.name.length && values.task.length && values.deadline.length> 3){
+        let text = "Are you sure?"
+        if(window.confirm(text)=== true) {
         text ="Sending"
         axios.post("http://localhost:3001/post", values)
        .then((res)=> {
-        toast.success("Data Sent Successfully")
-        console.log(res.data)
+        toast("Data Sent Successfully")
        })
         .catch((err) => {
          console.log(err)
          toast.error("Problem inserting data", err)
          })
-      }
-      else{
+         }
+        else{
         text = "You Cancelled"
         toast.error("Sending Cancelled")
+        }
+
       }
+    else
+    alert("Enter at least value of length 3")
        
-    
-       
-      } 
+  } 
+
+    const viewData = () => {
+        navigate('/View')
+      }
   return (
     <>
     <div className="form">
@@ -62,6 +69,8 @@ function Add() {
       
     </div>
     <button onClick={onSubmit}>Submit</button>
+    <button onClick={viewData}>Show All</button>
+    
     <ToastContainer />
 
   </>
