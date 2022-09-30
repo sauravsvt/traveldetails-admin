@@ -72,7 +72,7 @@ function Add() {
       </div>
       
       <div className="dead-line form-child">
-        <h4>jsfgperjgewp:</h4>   
+        <h4>DeadLine:</h4>   
         <input type="text" 
             placeholder="Deadline" name="deadline" value={deadline} onChange={e => inputHandler(e)} />
               
