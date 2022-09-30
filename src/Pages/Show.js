@@ -5,7 +5,7 @@ function Show() {
 
 
   const loadUser = async () => {
-  await axios.get(`http://localhost:3001/getAll`).then(response => {
+  await axios.get(`https://server-traveldetails.herokuapp.com/getAll`).then(response => {
     console.log(response.data)
     setAPIData(response.data)
   })

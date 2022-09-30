@@ -32,7 +32,7 @@ function Add() {
         let text = "Are you sure?"
         if(window.confirm(text)=== true) {
         text ="Sending"
-        axios.post("http://localhost:3001/post", values)
+        axios.post("https://server-traveldetails.herokuapp.com/post", values)
        .then((res)=> {
         toast("Data Sent Successfully")
        })
