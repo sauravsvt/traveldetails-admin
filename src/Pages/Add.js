@@ -20,7 +20,7 @@ function Add() {
     const inputHandler = (e) => {
         let val = e.target.value;
         setValues({...values, [e.target.name] : val})
-        console.log(values)
+     
     }
     
     let navigate = useNavigate();
