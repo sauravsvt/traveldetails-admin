@@ -62,3 +62,58 @@ main  .button:hover{
   padding: 10px;
   color: white;
  }
+
+
+ .head{
+  color: red;
+  font-size: 20px;
+  margin-left: 30%;
+  margin-top: -5%;
+ }
+
+ 
+ .head h3{
+  color: red;
+  font-size: 20px;
+  margin-left: 20%;
+
+ }
+
+ .logo{
+  position: absolute;
+  top: 10%;
+  right: 40%;
+  
+ }
+
+ img{
+  width: 40%;
+  margin-left: 50%;
+ }
+
+ @media screen and (max-width: 600px) {
+  body {
+    background-color: rgb(157, 148, 168);
+  }
+
+  .head h3{
+    color: red;
+    font-size: 10px;
+    margin-left: 30%;
+  
+   }
+
+   .head{
+    color: red;
+    font-size: 10px;
+    margin-top: 150px;
+    margin-left: 50px;
+   }
+
+
+   img{
+    width: 100%;
+    margin-left: 30%;
+   }
+  
+}

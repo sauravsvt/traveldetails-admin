@@ -5,7 +5,7 @@ import {  useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './CSS/Add.css'
-
+import logo from './logo.png'
 function Add() {
     const [values, setValues] = useState({
         name:'',
@@ -57,6 +57,14 @@ function Add() {
       }
   return (
     <>
+    <div className='head'>
+      <h1>Welcome to TravelDetails</h1>
+      <h3>Admin Panel</h3>
+      <div className='logo'>
+      <img src={logo} alt="Logo" />
+      </div>
+    
+    </div>
     <div className="form">
       <div className="name form-child">
         <h4>Name:</h4>
