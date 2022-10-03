@@ -26,7 +26,6 @@ useEffect( () => {
         <th>Phone</th>
         <th>Address</th>
         <th>Profile</th>
-        <th>AddedBy</th>
       </tbody>
   
     {APIData.map((val)=> {
@@ -38,7 +37,7 @@ useEffect( () => {
           <td>{val.phone}</td>
           <td>{val.address}</td>
           <td>{val.profile}</td>
-          <td>{val.addedby}</td>
+      
         </tr>
       </tbody>
       )
