@@ -25,7 +25,6 @@ useEffect( () => {
         <th>Email</th>
         <th>Phone</th>
         <th>Address</th>
-        <th>Role</th>
         <th>Profile</th>
         <th>AddedBy</th>
       </tbody>
@@ -38,7 +37,6 @@ useEffect( () => {
           <td>{val.email}</td>
           <td>{val.phone}</td>
           <td>{val.address}</td>
-          <td>{val.role}</td>
           <td>{val.profile}</td>
           <td>{val.addedby}</td>
         </tr>
