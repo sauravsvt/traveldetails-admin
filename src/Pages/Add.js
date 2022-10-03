@@ -5,16 +5,21 @@ import {  useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './CSS/Add.css'
-import logo from './logo.png'
+import jwt_decode from "jwt-decode";
 function Add() {
+  let storeToken = localStorage.getItem("data");
+  var decoded = jwt_decode(storeToken);
+  var token = (storeToken.replace(/['"]+/g, ''));
+
     const [values, setValues] = useState({
-        name:'',
+        to:'',
         task: '',
         deadline: '',
+        messagefrom: decoded.name
       });
 
      
-    const { name, task, deadline} = values;
+    const { to, task, deadline} = values;
     
     
     const inputHandler = (e) => {
@@ -25,14 +30,13 @@ function Add() {
     
     let navigate = useNavigate();
 
-    
     const onSubmit = (e) =>{
       e.preventDefault();
-      if(values.name.length && values.task.length && values.deadline.length> 3){
+      if(values.to.length && values.task.length && values.deadline.length> 3){
         let text = "Are you sure?"
         if(window.confirm(text)=== true) {
         text ="Sending"
-        axios.post("https://server-traveldetails.herokuapp.com/post", values)
+        axios.post(`https://server-traveldetails.herokuapp.com/assignTask/${token}`, values)
        .then((res)=> {
         toast("Data Sent Successfully")
        })
@@ -57,28 +61,18 @@ function Add() {
       }
   return (
     <>
-    <div className='head'>
-      <h1>Welcome to TravelDetails</h1>
-      <h3>Admin Panel</h3>
-      <div className='logo'>
-      <img src={logo} alt="Logo" />
-      </div>
-    
-    </div>
-    <div className="form">
+    <h1>Assign Task</h1>
       <div className="name form-child">
         <h4>Name:</h4>
         <input className="dead" type="text" 
-            placeholder="Name" name="name" value={name} onChange={e => inputHandler(e)} />
+            placeholder="To" name="to" value={to} onChange={e => inputHandler(e)} />
       </div>  
 
       <div className='tasks form-child'>
         <h4>Task:</h4>
         <input type="text" 
-          placeholder="Task" name="task" value={task} onChange={e => inputHandler(e)} />
-                
+          placeholder="Task" name="task" value={task} onChange={e => inputHandler(e)} />       
       </div>
-      
       <div className="dead-line form-child">
         <h4>DeadLine:</h4>   
         <input type="text" 
@@ -90,7 +84,7 @@ function Add() {
         <button onClick={onSubmit}>Submit</button>
         <button onClick={viewData}>Show All</button>
       </div>  
-    </div>
+   
     <ToastContainer />
 
   </>

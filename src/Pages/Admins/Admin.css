@@ -1,0 +1,9 @@
+.notice_area input{ 
+    width: 100%;
+    line-height: 7em; 
+}
+
+.notice_area button{ 
+  color: black;
+  background-color: greenyellow;
+}

@@ -1,11 +1,18 @@
+import jwt_decode from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-function Show() {
+
+function AssignedTasks() {
+  let storeToken = localStorage.getItem("data");
+  var decoded = jwt_decode(storeToken);
+  var name = decoded.name
+
+
   const [APIData, setAPIData] = useState([]);
 
 
   const loadUser = async () => {
-  await axios.get(`https://server-traveldetails.herokuapp.com/viewTasks`).then(response => {
+  await axios.get(`https://server-traveldetails.herokuapp.com/viewmyTasks/${name}`).then(response => {
     console.log(response.data)
     setAPIData(response.data)
   })
@@ -17,12 +24,10 @@ useEffect( () => {
   }, []);
 
 
-
-
   return (
-    <>   
-   <h1> Show All Tasks</h1>
-    <table>
+    <>
+      <h1> Your Assigned Tasks</h1>
+      <table>
       <tbody>
         <th>Assigned To</th>
         <th>Task</th>
@@ -49,4 +54,4 @@ useEffect( () => {
   )
 }
 
-export default Show
+export default AssignedTasks

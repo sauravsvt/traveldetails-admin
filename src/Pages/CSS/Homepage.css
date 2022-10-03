@@ -1,0 +1,42 @@
+.Add {
+    margin-bottom: 10%;
+    border: 2px solid black;
+}
+
+.Show{
+    border: 2px solid rgb(141, 6, 6);
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;    
+}
+
+
+.welcome h1{
+    color: rgb(241, 21, 105)
+}
+
+.welcome h3{
+    color: rgb(36, 21, 241);
+}
+.welcome button{
+    color: black;
+    margin-left: 15%;
+    background-color: red;
+    width: fit-content; 
+    font-size: 30px;  
+
+}
+
+.Attendance label {
+    font-size: 20px;
+    color: rgb(100, 240, 8);
+    margin: 10%;
+}
+
+.Attendance button {
+    font-size: 100px;
+    color: rgb(100, 240, 8);
+}
+
