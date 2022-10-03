@@ -56,7 +56,7 @@ function Signin() {
   <input type="text" placeholder="username" value={username} name="username" onChange={inputHandler}/>
 
   <br></br>
-  <input type="text" placeholder="password" value={password} name="password" onChange={inputHandler}/>
+  <input type="password" placeholder="password" value={password} name="password" onChange={inputHandler}/>
 
   <br></br>
   <button type="submit" onClick={onSubmit} > Login</button>
