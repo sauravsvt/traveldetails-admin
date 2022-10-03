@@ -23,8 +23,7 @@ function Homepage() {
 
   const logOut = () => {
     localStorage.clear()
-    console.log(localStorage)
-    navigate('/')
+    navigate('/login')
  }
 
   if(decoded.role === "admin"){
