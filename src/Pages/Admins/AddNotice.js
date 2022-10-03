@@ -25,10 +25,10 @@ function AddNotice() {
         toast.success(response.data.message);
        
        })
-     // .catch((err) => {
-      //    console.log(err)
-      //  //   toast.error(err.response.data.error)
-      //  })
+     .catch((err) => {
+         console.log(err)
+         toast.error(err.response.data.error)
+       })
     }
 
   return (
