@@ -38,7 +38,9 @@ useEffect( () => {
         <th>Assigned On</th>
       </tbody>
   
-    {APIData.map((val)=> {
+    {
+      APIData.length > 0 ? 
+      APIData.map((val)=> {
       return (
       <tbody className="table-list">
         <tr key={val._id}>
@@ -50,7 +52,10 @@ useEffect( () => {
         </tr>
       </tbody>
       )
-    })}
+    })
+    
+    :
+    <h2>Feel Free, No Tasks Assigned</h2>}
     </table>
     </div>
     </>

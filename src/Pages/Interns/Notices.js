@@ -10,7 +10,6 @@ function Notices() {
 
   const loadUser = async () => {
     await axios.get(`https://server-traveldetails.herokuapp.com/viewnotice`).then(response => {
-      console.log(response.data)
       setAPIData(response.data)
     })
    
@@ -21,6 +20,9 @@ useEffect( () => {
   loadUser();
   }, []);
 
+  console.log(APIData)
+
+
   return (
     <>
       <div className='ViewNotices'>
@@ -30,8 +32,10 @@ useEffect( () => {
         <th>Notices</th>
         <th>Published Date</th>
       </tbody>
-  
-    {APIData.map((val)=> {
+
+    {
+      APIData.length > 0 ? 
+      APIData.map((val)=> {
       return (
       <tbody className="table-list">
         <tr key={val._id}>
@@ -40,7 +44,10 @@ useEffect( () => {
         </tr>
       </tbody>
       )
-    })}
+    })
+    
+    :
+    <h2>No Result Found</h2>}
     </table>
       </div>
     </>
