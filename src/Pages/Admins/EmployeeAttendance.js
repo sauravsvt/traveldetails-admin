@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../CSS/Homepage.css';
 
 function EmployeeAttendance() {
   const [APIData, setAPIData] = useState([]);
@@ -18,16 +19,17 @@ useEffect( () => {
 
   return (
     <>
+    <div className="ViewNotices">
       <h1> View Employee Attendance</h1>
       <table>
-      <tbody>
+      <tbody className="table-title">
         <th>Employee Name</th>
         <th>Attendance</th>
       </tbody>
   
     {APIData.map((val)=> {
       return (
-      <tbody>
+      <tbody className="table-list">
         <tr key={val._id}>
           <td>{val.name}</td>
           <td>{val.timeStamp}</td>
@@ -36,6 +38,7 @@ useEffect( () => {
       )
     })}
     </table>
+    </div>
     </>
   )
 }

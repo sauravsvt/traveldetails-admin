@@ -34,9 +34,9 @@ function AddNotice() {
   return (
     <>
     <div className="notice_area">
-  <input type="text" placeholder="Add Notice" name="notice" onChange={inputHandler}  value={notice}/>
-  <button onClick={onSubmit}> Add Notice</button>
-    <ToastContainer/>
+      <input type="text" placeholder="Add Notice" name="notice" onChange={inputHandler}  value={notice}/>
+      <button onClick={onSubmit}> Add Notice</button>
+      <ToastContainer/>
   </div>
  
     </>

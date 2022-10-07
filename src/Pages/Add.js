@@ -60,33 +60,37 @@ function Add() {
         navigate('/View')
       }
   return (
-    <>
-    <h1>Assign Task</h1>
-      <div className="name form-child">
-        <h4>Name:</h4>
-        <input className="dead" type="text" 
-            placeholder="To" name="to" value={to} onChange={e => inputHandler(e)} />
+  <>
+    <div className='form'>
+      <h1>Assign Task</h1>
+
+      <div className='name-deadline'>
+        <div>
+          <h4>Name</h4>
+          <input type="text" 
+              placeholder="To" name="to" value={to} onChange={e => inputHandler(e)} />
+        </div>  
+        
+        <div>
+          <h4>DeadLine</h4>   
+          <input type="text" 
+              placeholder="Deadline" name="deadline" value={deadline} onChange={e => inputHandler(e)} />   
+        </div> 
       </div>  
 
-      <div className='tasks form-child'>
-        <h4>Task:</h4>
-        <input type="text" 
+      <div className='task'>
+        <h4>Task</h4>
+        <textarea type="text" 
           placeholder="Task" name="task" value={task} onChange={e => inputHandler(e)} />       
-      </div>
-      <div className="dead-line form-child">
-        <h4>DeadLine:</h4>   
-        <input type="text" 
-            placeholder="Deadline" name="deadline" value={deadline} onChange={e => inputHandler(e)} />
-              
-      </div>  
+      </div> 
 
       <div className="buttons">
         <button onClick={onSubmit}>Submit</button>
         <button onClick={viewData}>Show All</button>
       </div>  
-   
+    
     <ToastContainer />
-
+    </div>
   </>
   )
 }

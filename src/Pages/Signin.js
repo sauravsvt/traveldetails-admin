@@ -6,6 +6,7 @@ import {   ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //import { useCookies } from 'react-cookie';
 import jwt_decode from "jwt-decode";
+import './CSS/sign-in.css';
 
 function Signin() {
   let storeToken = localStorage.getItem("data");
@@ -51,17 +52,20 @@ function Signin() {
 
   return (
    <>
-  <h1 style={{color: "blue"}}>Sign In</h1>
+   <div className="sign-in">
+     <h1 style={{color: "rgb(0, 128, 0)"}}>Sign In</h1>
 
-  <input type="text" placeholder="username" value={username} name="username" onChange={inputHandler}/>
+     <h2>Username</h2>
+     <input type="text" placeholder="username" value={username} name="username" onChange={inputHandler}/>
 
-  <br></br>
-  <input type="password" placeholder="password" value={password} name="password" onChange={inputHandler}/>
+     <br/>
+     <h2>Password</h2>
+     <input type="password" placeholder="Password" value={password} name="password" onChange={inputHandler}/>
 
-  <br></br>
-  <button type="submit" onClick={onSubmit} > Login</button>
+     <button type="submit" onClick={onSubmit} > Login</button>
 
-  <ToastContainer/>
+     <ToastContainer/>
+   </div>
    </>
   )
 }

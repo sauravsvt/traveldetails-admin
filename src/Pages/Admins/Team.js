@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../CSS/Homepage.css'
+
 
 function Team() {
   const [APIData, setAPIData] = useState([]);
@@ -18,9 +20,10 @@ useEffect( () => {
 
   return (
     <>
-      <h1> TravelDetails Team</h1>
+    <h1 className="big-table-h1"> TravelDetails Team</h1>
+    <div className="big-table">
       <table>
-      <tbody>
+      <tbody className="table-title">
         <th> Name</th>
         <th>Email</th>
         <th>Phone</th>
@@ -30,7 +33,7 @@ useEffect( () => {
   
     {APIData.map((val)=> {
       return (
-      <tbody>
+      <tbody className="table-list">
         <tr key={val._id}>
           <td>{val.name}</td>
           <td>{val.email}</td>
@@ -43,6 +46,7 @@ useEffect( () => {
       )
     })}
     </table>
+    </div>
     </>
   )
 }

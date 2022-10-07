@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import './CSS/Homepage.css'
 function Show() {
   const [APIData, setAPIData] = useState([]);
 
@@ -20,10 +21,11 @@ useEffect( () => {
 
 
   return (
-    <>   
-   <h1> Show All Tasks</h1>
+    <>  
+   <h1 className="big-table-h1"> Show All Tasks</h1>
+   <div className="big-table">
     <table>
-      <tbody>
+      <tbody className="table-title">
         <th>Assigned To</th>
         <th>Task</th>
         <th>Deadline</th>
@@ -33,10 +35,10 @@ useEffect( () => {
   
     {APIData.map((val)=> {
       return (
-      <tbody>
+      <tbody className="table-list">
         <tr key={val._id}>
           <td>{val.to}</td>
-          <td>{val.task}</td>
+          <td className="aa">{val.task}</td>
           <td>{val.deadline}</td>
           <td>{val.messagefrom}</td>
           <td>{val.timeStamp}</td>
@@ -45,6 +47,7 @@ useEffect( () => {
       )
     })}
     </table>
+    </div>
     </>
   )
 }

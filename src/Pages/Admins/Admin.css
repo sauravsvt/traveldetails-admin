@@ -1,9 +1,49 @@
+:root{
+  --button-bg: rgb(0, 128, 0);
+  --button-hover: #4E9F3D;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notice_area{
+  display: flex;
+  width: 96vw;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+  margin: 20px auto;
+}
+
 .notice_area input{ 
     width: 100%;
-    line-height: 7em; 
+    line-height: 4em; 
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+    border: none;
+}
+
+.notice_area input:focus{
+  outline: none
 }
 
 .notice_area button{ 
   color: black;
-  background-color: greenyellow;
+  background-color: rgb(0, 128, 0);
+  display: inline;
+  width: 60px;
+  border-radius: 0 5px 5px 0;
+  padding: 2px 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s;
+}
+
+.notice_area button:hover{
+  background-color: var(--button-hover);
+  transform: translate();
 }

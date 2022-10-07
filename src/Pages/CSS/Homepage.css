@@ -1,3 +1,13 @@
+:root{
+    --button-bg: rgb(0, 128, 0);
+    --button-hover: #4E9F3D;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .Add {
     margin-bottom: 10%;
     border: 2px solid black;
@@ -7,26 +17,52 @@
     border: 2px solid rgb(141, 6, 6);
 }
 
-.welcome {
-    display: flex;
-    flex-direction: column;    
+.top{
+    display: grid;
+    grid-template-columns: 50vw auto;
 }
 
+.welcome{
+    width: 93vw;
+    margin: 1rem 1rem;
+}
 
 .welcome h1{
-    color: rgb(241, 21, 105)
+    color: rgb(5, 185, 5);
+    font-size: 23px;
 }
 
 .welcome h3{
     color: rgb(36, 21, 241);
 }
-.welcome button{
-    color: black;
-    margin-left: 15%;
-    background-color: red;
-    width: fit-content; 
-    font-size: 30px;  
 
+.welcome-button{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin: 1rem 1rem;
+}
+
+.welcome-button button{
+    width: 50px;
+    height: 50px;
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 50%;
+    padding: 2px;
+    place-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.welcome-button button:hover{
+    background-color: var(--button-hover);
+}
+
+.welcome-button button svg{
+    width: 30px;
+    height: 30px;
+    place-items: center;
 }
 
 .Attendance label {
@@ -40,3 +76,55 @@
     color: rgb(100, 240, 8);
 }
 
+/* Notice.js */
+
+.ViewNotices{
+    margin: 2rem 0;
+}
+
+.ViewNotices h1{
+    margin: 1rem 0 0 0;
+}
+
+.table-title{
+    background-color: rgb(16, 117, 16);
+    color: white;
+}
+
+.table-title th{
+    padding: 10px 5px;
+}
+
+.table-list td{
+    padding: 10px 0 10px 10px;
+}
+
+.table-list:nth-child(odd){
+    background-color: rgb(230, 230, 230);
+}
+
+/* teanm.js */
+.big-table-h1{
+    margin: 1rem;
+}
+
+.big-table{
+    width: 96vw;
+    overflow-x: scroll;
+    margin: 1rem 0.5rem;
+}
+
+
+.big-table-title{
+    background-color: rgb(16, 117, 16);
+    color: white;
+    width: 96vw;
+}
+
+.big-table-list tr td{
+    padding: 10px 0 10px 10px;
+}
+
+.big-table-list:nth-child(odd){
+    background-color: rgb(230, 230, 230);
+}

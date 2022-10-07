@@ -17,9 +17,10 @@ useEffect( () => {
 
   return (
    <>
+   <div className="ViewNotices">
     <h1>Tickets Raised</h1>
     <table>
-      <tbody>
+      <tbody className="table-title">
         <th>From</th>
         <th>Issue</th>
         <th>Date</th>
@@ -27,7 +28,7 @@ useEffect( () => {
   
     {APIData.map((val)=> {
       return (
-      <tbody>
+      <tbody className="table-list">
         <tr key={val._id}>
           <td>{val.name}</td>
           <td>{val.ticket}</td>
@@ -37,7 +38,7 @@ useEffect( () => {
       )
     })}
     </table>
-
+    </div>
    </>
   )
 }

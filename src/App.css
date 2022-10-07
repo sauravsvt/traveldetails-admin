@@ -92,9 +92,6 @@ main  .button:hover{
  }
 
  @media screen and (max-width: 600px) {
-  body {
-    background-color: rgb(157, 148, 168);
-  }
 
   .head h3{
     color: red;

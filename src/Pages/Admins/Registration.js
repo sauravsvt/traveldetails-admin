@@ -1,5 +1,6 @@
 import React, {  useState } from "react";
 import axios from "axios";
+import '../CSS/registration.css'
 
 //import { useForm } from "react-hook-form";
 import {   ToastContainer, toast } from 'react-toastify';
@@ -50,39 +51,49 @@ function Registration() {
 
   return (
    <>
-  <h1 style={{color: "blue"}}>Sign Up Intern</h1>
-    <label> name </label>
-  <input type="text" placeholder="name" value={name} name="name" onChange={inputHandler}/>
+   <div className="bbground">
+    <div className="signup"> 
+      <h1 style={{color: "rgb(0, 128, 0)"}}>Sign Up Intern</h1>
 
-  <br></br>
-  <label> email </label>
-  <input type="email" placeholder="email" value={email} name="email" onChange={inputHandler}/>
+      <div className="label-input">
+        <label> Name </label>
+        <input type="text" placeholder="Name" value={name} name="Name" onChange={inputHandler}/>
+      </div>
 
-  <br></br>
-  <label> phone </label>
-  <input type="number" placeholder="phone" value={phone} name="phone" onChange={inputHandler}/>
+      <div className="label-input">
+        <label> Email </label>
+        <input type="email" placeholder="Email" value={email} name="email" onChange={inputHandler}/>
+      </div>
 
-<br></br>
-<label> address </label>
-<input type="text" placeholder="address" value={address} name="address" onChange={inputHandler}/>
+      <div className="label-input">
+        <label> Phone </label>
+        <input type="number" placeholder="Phone" value={phone} name="phone" onChange={inputHandler}/>
+      </div>
 
-<br></br>
-<label> profile </label>
-<input type="text" placeholder="profile" value={profile} name="profile" onChange={inputHandler}/>
+      <div className="label-input">
+        <label> Address </label>
+        <input type="text" placeholder="Address" value={address} name="address" onChange={inputHandler}/>
+      </div>
+      <div className="label-input">
+        <label> Profile </label>
+        <input type="text" placeholder="Profile" value={profile} name="profile" onChange={inputHandler}/>
+      </div>
 
-<br></br>
-<label> username </label>
-<input type="text" placeholder="username" value={username} name="username" onChange={inputHandler}/>
+      <div className="label-input">
+        <label> Username </label>
+        <input type="text" placeholder="Username" value={username} name="username" onChange={inputHandler}/>
+      </div>
 
-<br></br>
-<label> password </label>
-<input type="password" placeholder="password" value={password} name="password" onChange={inputHandler}/>
+      <div className="label-input">
+        <label> Password </label>
+        <input type="password" placeholder="Password" value={password} name="password" onChange={inputHandler}/>
+      </div>
 
-<br></br>
-  <button type="submit" onClick={onSubmit} > Add Employee</button>
-
-<Team/>
-  <ToastContainer/>
+      <button type="submit" onClick={onSubmit} > Add Employee</button>
+      </div>
+    </div>
+    <Team/>
+    <ToastContainer/>
    </>
   )
 }
