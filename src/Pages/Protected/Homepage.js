@@ -1,12 +1,14 @@
 import React from 'react'
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import jwt_decode from "jwt-decode";
+import 'react-toastify/dist/ReactToastify.css';
 import {  useNavigate} from "react-router-dom";
 import Add from '../Add';
 import Show from '../Show';
-import jwt_decode from "jwt-decode";
 import '../CSS/Homepage.css'
 import Notices from '../Interns/Notices';
 import RaiseTicket from '../Interns/RaiseTicket';
-import MarkAttendance from '../Interns/MarkAttendance'
 import AssignedTasks from '../Interns/AssignedTasks';
 import AddNotice from '../Admins/AddNotice';
 import EmployeeAttendance from '../Admins/EmployeeAttendance';
@@ -15,10 +17,20 @@ import TicketsRaised from '../Admins/TicketsRaised';
 function Homepage() {
   let storeToken = localStorage.getItem("data");
   var decoded = jwt_decode(storeToken);
-
+  var name= decoded.name
   let navigate = useNavigate();
   const RegisterNewUser = () => {
     navigate('/register')
+ }
+
+ const Attedance =()=> {
+  axios.get(`https://server-traveldetails.herokuapp.com/doattendance/${name}`).then((response)=> {
+    console.log(response.data.message)
+    toast.success("Attedance marked successfully")
+   }).catch((err) => {
+     console.log(err.response.data.message)
+     toast.error(err.response.data.message)
+   })
  }
 
   const logOut = () => {
@@ -84,7 +96,7 @@ function Homepage() {
     </div>
 
     <div className='welcome-button'>
-      <button>
+      <button onClick={Attedance}>
       <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <rect width="96" height="96" fill="url(#pattern0)"/>
         <defs>
@@ -114,9 +126,9 @@ function Homepage() {
 
      
      <Notices/>
-     <MarkAttendance/>
      <AssignedTasks/>
      <RaiseTicket/>
+     <ToastContainer/>
    </>
   )
 }
